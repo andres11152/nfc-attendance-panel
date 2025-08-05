@@ -1,13 +1,62 @@
-body {
+/* index.css */
+
+html, body, #root {
+  height: 100%;
+  width: 100vw;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #f7f9fb;
+  font-family: 'SF Pro Display', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Quita centrado global, deja a los componentes decidir */
+body {
+  font-family: inherit;
+  background: #f7f9fb;
+  color: #21243a;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+a {
+  color: #4c5cff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 0.6em 1.4em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: #4c5cff;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(76,92,255,0.09);
+  transition: background 0.25s, box-shadow 0.25s;
+}
+button:hover {
+  background: #363b6b;
+  box-shadow: 0 4px 16px rgba(76,92,255,0.12);
+}
+
+@media (max-width: 600px) {
+  html, body, #root {
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: 0 !important;
+  }
 }

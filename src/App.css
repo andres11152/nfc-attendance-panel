@@ -1,38 +1,152 @@
-.App {
-  text-align: center;
+/* App.css */
+
+/* ======= HEADER ======= */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 64px;
+  background: #fff;
+  box-shadow: 0 2px 16px 0 rgba(31, 38, 135, 0.08);
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  padding: 0 32px;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #4c5cff;
+  font-family: 'SF Pro Display', system-ui, Arial, sans-serif;
+  transition: box-shadow .2s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header span {
+  color: #1a1a1a;
+  font-weight: 400;
+  margin-left: 10px;
+  font-size: 1rem;
+  letter-spacing: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ======= SIDEBAR ======= */
+.sidebar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  background: #fff;
+  box-shadow: 1px 0 16px 0 rgba(31, 38, 135, 0.05);
+  padding: 36px 0 0 0;
+  z-index: 90;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  border-right: 1.5px solid #f2f4f7;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.sidebar .menu-item {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 12px;
+  padding: 10px 28px;
+  color: #4c5cff;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1.08rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
+  background: #f2f3ff;
+  color: #222;
 }
 
-.App-link {
-  color: #61dafb;
+/* Responsive sidebar */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 56px;
+    padding: 10px 0 0 0;
+    gap: 10px;
+    align-items: center;
+    min-width: 56px;
+    border-right: 1.5px solid #f2f4f7;
+  }
+  .sidebar nav .menu-item span {
+    display: none;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ======= MAIN CONTENT ======= */
+.main-content {
+  margin-top: 64px;
+  margin-left: 220px;
+  padding: 40px;
+  min-height: calc(100vh - 64px);
+  background: #f7f9fb;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: margin-left .2s;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    margin-left: 56px;
+    padding: 16px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* ======= CARD / PANEL ======= */
+.card-pro {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px 0 rgba(60, 72, 110, 0.06);
+  padding: 36px 40px;
+  margin: 0 auto;
+  min-width: 280px;
+  max-width: 440px;
+  text-align: center;
+  font-size: 1.16rem;
+  font-family: inherit;
+  color: #21243a;
+  transition: box-shadow .2s;
+}
+.card-pro strong {
+  color: #4c5cff;
+}
+
+@media (max-width: 600px) {
+  .card-pro {
+    padding: 18px 8px;
+    min-width: 90vw;
+    max-width: 98vw;
   }
+}
+
+/* Opcional: Footer fijo abajo */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 36px;
+  background: transparent;
+  color: #aaa;
+  font-size: 0.95rem;
+  text-align: center;
+  z-index: 30;
+  letter-spacing: 0.3px;
+}
+
+/* Elimina cosas viejas del template default */
+.logo, .card, .read-the-docs {
+  display: none !important;
 }
